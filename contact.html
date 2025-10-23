@@ -22,13 +22,74 @@
             --dark-gray: #333333;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
-        /* Header Styles */
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--white);
+            z-index: 2000;
+            padding: 2rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            margin-top: 3rem;
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: block;
+            padding: 0.5rem 0;
+        }
+        
+        /* Header */
         header {
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -41,8 +102,8 @@
         .top-bar {
             background: var(--primary-green);
             color: var(--white);
-            padding: 12px 0;
-            font-size: 0.9rem;
+            padding: 8px 0;
+            font-size: 0.8rem;
         }
         
         .top-bar .container {
@@ -53,23 +114,23 @@
         
         .company-tagline {
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
         
-        .contact-info {
+        .contact-info1 {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
         }
         
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 12px 0;
         }
         
         .logo {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--primary-green);
             text-decoration: none;
@@ -82,42 +143,43 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 3rem;
+            gap: 1.5rem;
         }
         
         .nav-links a {
             color: var(--dark-gray);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: color 0.3s;
-            padding: 10px 0;
+            padding: 8px 0;
         }
         
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--primary-green);
         }
-
+        
         /* Hero Section */
         .hero {
-             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 180px 0 100px;
+            padding: 150px 0 80px;
             text-align: center;
+            margin-top: 80px;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
         }
         
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -125,10 +187,10 @@
         .cta-button {
             background: var(--primary-green);
             color: var(--white);
-            padding: 15px 40px;
+            padding: 12px 30px;
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s;
             font-weight: bold;
@@ -138,86 +200,90 @@
             background: var(--dark-green);
             transform: translateY(-2px);
         }
-
+        
         /* Contact Section */
         .contact {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--white);
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary-green);
             margin-bottom: 1rem;
         }
         
         .section-title p {
             color: var(--dark-gray);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
         
         .contact-info {
             background: var(--light-green);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .contact-info h3 {
             color: var(--primary-green);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
         
         .contact-details {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .contact-detail {
             display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
             padding: 1rem;
             background: var(--white);
             border-radius: 8px;
         }
         
         .contact-detail i {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-right: 1rem;
             color: var(--primary-green);
+            margin-top: 0.2rem;
         }
         
         .contact-detail div h4 {
             color: var(--primary-green);
             margin-bottom: 0.5rem;
+            font-size: 1rem;
         }
         
         .contact-detail div p {
             color: var(--dark-gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
         
         .contact-form {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border: 1px solid var(--light-green);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .form-group label {
@@ -225,17 +291,18 @@
             margin-bottom: 0.5rem;
             color: var(--dark-gray);
             font-weight: 500;
+            font-size: 0.9rem;
         }
         
         .contact-form input,
         .contact-form textarea,
         .contact-form select {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             border: 1px solid var(--light-gray);
             border-radius: 5px;
             background: var(--white);
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: border-color 0.3s;
         }
         
@@ -253,12 +320,12 @@
 
         /* Map Section */
         .map-section {
-            padding: 80px 0;
+            padding: 60px 0;
             background: var(--light-green);
         }
         
         .map-container {
-            height: 400px;
+            height: 300px;
             background: var(--white);
             border-radius: 10px;
             overflow: hidden;
@@ -272,28 +339,30 @@
             align-items: center;
             justify-content: center;
             color: var(--primary-green);
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
+            text-align: center;
+            padding: 1rem;
         }
 
         /* Footer */
         footer {
             background: var(--primary-green);
             color: var(--white);
-            padding: 50px 0 20px;
+            padding: 40px 0 20px;
         }
         
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 2rem;
         }
         
         .footer-section h3 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             color: var(--white);
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
         
         .footer-section ul {
@@ -301,13 +370,14 @@
         }
         
         .footer-section ul li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.7rem;
         }
         
         .footer-section a {
             color: var(--light-green);
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.9rem;
         }
         
         .footer-section a:hover {
@@ -318,10 +388,117 @@
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                padding: 160px 0 90px;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .top-bar {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+                margin-top: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .hero {
+                padding: 100px 0 50px;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.4rem;
+            }
+            
+            .contact-detail {
+                padding: 0.8rem;
+            }
+            
+            .contact-detail i {
+                font-size: 1.1rem;
+                margin-right: 0.8rem;
+            }
+            
+            .map-container {
+                height: 250px;
+            }
+            
+            .map-placeholder {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        <ul class="mobile-nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="top-bar">
@@ -335,11 +512,12 @@
         </div>
         <div class="container">
             <nav class="nav-container">
-                <a href="products.html" class="logo">Agri<span>Mulch</span></a>
+                <a href="home.html" class="logo">Agri<span>Mulch</span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
                 <ul class="nav-links">
-                    <li><a href="home.html" >home</a></li>
-                    <li><a href="products.html" >Products</a></li>
-                    <li><a href="about.html" >About</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
@@ -351,7 +529,7 @@
         <div class="container">
             <h1>Contact Us</h1>
             <p>Get in touch with us for quotes, technical support, and agricultural solutions</p>
-            <button class="cta-button">Get Instant Quote</button>
+            <button class="cta-button" onclick="document.getElementById('contactForm').scrollIntoView({behavior: 'smooth'})">Get Instant Quote</button>
         </div>
     </section>
 
@@ -495,6 +673,26 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
         // Form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -514,7 +712,7 @@
         // Add hover effects to contact details
         document.querySelectorAll('.contact-detail').forEach(detail => {
             detail.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateX(10px)';
+                this.style.transform = 'translateX(5px)';
                 this.style.transition = 'transform 0.3s ease';
             });
             detail.addEventListener('mouseleave', function() {
