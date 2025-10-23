@@ -117,7 +117,7 @@
             font-size: 0.9rem;
         }
         
-        .contact-info {
+        .contact-info1 {
             display: flex;
             gap: 1rem;
         }
@@ -143,7 +143,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .nav-links a {
@@ -159,6 +159,89 @@
         .nav-links a.active {
             color: var(--primary-green);
         }
+        
+/* Header - Reduced Height */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar {
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 6px 0; /* Reduced padding */
+    font-size: 0.8rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 0; /* Reduced padding */
+}
+
+/* Logo - Made Bigger */
+/* Logo - Made Much Bigger */
+.logo-img {
+    height: 85px; /* Increased from 50px to 70px */
+    width: auto;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 60px; /* Bigger on tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 50px; /* Bigger on mobile */
+    }
+}
+
+/* Hero Section - Adjusted margin for smaller header */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 140px 0 80px; /* Reduced top padding */
+    text-align: center;
+    margin-top: 70px; /* Reduced margin */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 45px; /* Slightly bigger on mobile */
+    }
+    
+    .hero {
+        padding: 110px 0 60px;
+        margin-top: 60px;
+    }
+    
+    .nav-container {
+        padding: 6px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 40px; /* Slightly bigger on small mobile */
+    }
+    
+    .hero {
+        padding: 90px 0 50px;
+        margin-top: 50px;
+    }
+}
+
         
         /* Hero Section */
         .hero {
@@ -480,30 +563,31 @@
     </div>
 
     <!-- Header -->
-    <header>
-        <div class="top-bar">
-            <div class="container">
-                <div class="company-tagline">Leading Mulch Film Manufacturers in India</div>
-                <div class="contact-info">
-                    <span>📞 +91-9876543210</span>
-                    <span>✉️ info@agrimulch.com</span>
-                </div>
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <div class="company-tagline">Leading Mulch Film Manufacturers in India</div>
+            <div class="contact-info1">
+                <span>📞 +91-9876543210</span>
+                <span>✉️ info@agrimulch.com</span>
             </div>
         </div>
-        <div class="container">
-            <nav class="nav-container">
-                <a href="home.html" class="logo">Agri<span>Mulch</span></a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-                <ul class="nav-links">
-<li><a href="home.html" >home</a></li>
-<li><a href="products.html" >Products</a></li>
-<li><a href="about.html" class="active">About</a></li>
-<li><a href="contact.html" >Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
+    </div>
+    <div class="container">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <img src="img/sm1bg.png" alt="AgriMulch Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links">
+                <li><a href="home.html">home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
