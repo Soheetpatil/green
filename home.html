@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriMulch - Premium Agricultural Mulch Films</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --light-green: #e8f5e9;
+            --dark-green: #1b5e20;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 12px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .company-tagline {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--dark-green);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            padding: 10px 0;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .cta-button:hover {
+            background: var(--light-green);
+            transform: translateY(-2px);
+        }
+
+        .product-cta-button {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .product-cta-button:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 1px solid var(--light-green);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 125, 50, 0.2);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-info h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .product-info p {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+        
+        .specs {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        
+        .specs li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            color: var(--dark-gray);
+        }
+        
+        .specs li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--light-green);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: var(--dark-gray);
+        }
+        
+        /* Technical Specs */
+        .tech-specs {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--light-green);
+        }
+        
+        .specs-table th,
+        .specs-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .specs-table th {
+            background: var(--primary-green);
+            color: var(--white);
+            font-weight: bold;
+        }
+        
+        .specs-table tr:hover {
+            background: var(--light-green);
+        }
+        
+        /* Applications Section */
+        .applications {
+            padding: 80px 0;
+            background: var(--light-green);
+        }
+        
+        .application-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .application-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .application-card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: #8bc08d;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .contact-info h3 {
+            color: black;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            background: var(--white);
+        }
+        
+        .contact-form textarea {
+            height: 120px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--light-green);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="company-tagline">Leading Mulch Film Manufacturers in India</div>
+                <div class="contact-info1">
+                    <span>📞 +91-9876543210</span>
+                    <span>✉️ info@agrimulch.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="nav-container">
+                <a href="products.html" class="logo">Agri<span>Mulch</span></a>
+                <ul class="nav-links">
+                    <li><a href="home.html" >home</a></li>
+                    <li><a href="products.html" >Products</a></li>
+                    <li><a href="about.html" >About</a></li>
+                    <li><a href="contact.html" >Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Premium Agricultural Mulch Films</h1>
+            <p>Enhance crop yield and quality with our high-performance mulch films. Designed for Indian farming conditions.</p>
+            <button class="cta-button">Get Free Quote</button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mulch Film Products</h2>
+                <p>High-quality solutions for modern agriculture</p>
+            </div>
+            <div class="product-grid">
+                <!-- Product 1 - Black Mulch Film -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1597848212624-e6d4bd7e1e92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        Black Mulch Film
+                    </div>
+                    <div class="product-info">
+                        <h3>Black Mulch Film</h3>
+                        <p>Excellent weed control and moisture retention for various crops</p>
+                        <ul class="specs">
+                            <li><strong>Thickness:</strong> 25-50 microns</li>
+                            <li><strong>Width:</strong> 1-4 meters</li>
+                            <li><strong>Material:</strong> LLDPE</li>
+                            <li><strong>UV Protection:</strong> 8 months</li>
+                        </ul>
+                        <button class="product-cta-button">Get Quote</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 - Transparent Mulch Film -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        Transparent Mulch Film
+                    </div>
+                    <div class="product-info">
+                        <h3>Transparent Mulch Film</h3>
+                        <p>Early soil warming for faster growth and early harvest</p>
+                        <ul class="specs">
+                            <li><strong>Thickness:</strong> 25-40 microns</li>
+                            <li><strong>Width:</strong> 1-3 meters</li>
+                            <li><strong>Material:</strong> LDPE</li>
+                            <li><strong>UV Protection:</strong> 6 months</li>
+                        </ul>
+                        <button class="product-cta-button">Get Quote</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 - Biodegradable Mulch -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');">
+                        Biodegradable Mulch
+                    </div>
+                    <div class="product-info">
+                        <h3>Biodegradable Mulch</h3>
+                        <p>Eco-friendly solution for sustainable farming practices</p>
+                        <ul class="specs">
+                            <li><strong>Thickness:</strong> 15-30 microns</li>
+                            <li><strong>Width:</strong> 1-2 meters</li>
+                            <li><strong>Material:</strong> Bio-based polymer</li>
+                            <li><strong>Degradation:</strong> 4-6 months</li>
+                        </ul>
+                        <button class="product-cta-button">Get Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 - Silver Black Mulch -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+                        Silver Black Mulch
+                    </div>
+                    <div class="product-info">
+                        <h3>Silver Black Mulch</h3>
+                        <p>Reflective surface for pest control and temperature regulation</p>
+                        <ul class="specs">
+                            <li><strong>Thickness:</strong> 30-50 microns</li>
+                            <li><strong>Width:</strong> 1.2-3 meters</li>
+                            <li><strong>Material:</strong> Co-extruded LLDPE</li>
+                            <li><strong>UV Protection:</strong> 9 months</li>
+                        </ul>
+                        <button class="product-cta-button">Get Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 - Green Mulch Film -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        Green Mulch Film
+                    </div>
+                    <div class="product-info">
+                        <h3>Green Mulch Film</h3>
+                        <p>Specialized for specific crops with optimal light transmission</p>
+                        <ul class="specs">
+                            <li><strong>Thickness:</strong> 20-35 microns</li>
+                            <li><strong>Width:</strong> 1-2.5 meters</li>
+                            <li><strong>Material:</strong> LDPE/LLDPE blend</li>
+                            <li><strong>UV Protection:</strong> 7 months</li>
+                        </ul>
+                        <button class="product-cta-button">Get Quote</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 - Photo-Selective Mulch -->
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        Photo-Selective Mulch
+                    </div>
+                    <div class="product-info">
+                        <h3>Photo-Selective Mulch</h3>
+                        <p>Advanced technology for specific light wavelength management</p>
+                        <ul class="specs">
+                            <li><strong>Thickness:</strong> 25-45 microns</li>
+                            <li><strong>Width:</strong> 1.5-4 meters</li>
+                            <li><strong>Material:</strong> Special polymer blend</li>
+                            <li><strong>UV Protection:</strong> 10 months</li>
+                        </ul>
+                        <button class="product-cta-button">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Mulch Films?</h2>
+                <p>Superior quality and proven results</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Water Conservation</h3>
+                    <p>Reduce water usage by up to 50% with better moisture retention</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Weed Control</h3>
+                    <p>Effective suppression of weed growth without chemicals</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Higher Yield</h3>
+                    <p>Increase crop yield by 30-50% with optimal growing conditions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Cost Effective</h3>
+                    <p>Reduce labor costs and chemical expenses significantly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="tech-specs" id="specifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Technical Specifications</h2>
+                <p>Comprehensive product specifications</p>
+            </div>
+            <table class="specs-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Black Mulch</th>
+                        <th>Transparent Mulch</th>
+                        <th>Biodegradable</th>
+                        <th>Silver Black</th>
+                        <th>Green Mulch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Thickness (microns)</td>
+                        <td>25-50</td>
+                        <td>25-40</td>
+                        <td>15-30</td>
+                        <td>30-50</td>
+                        <td>20-35</td>
+                    </tr>
+                    <tr>
+                        <td>Width (meters)</td>
+                        <td>1-4</td>
+                        <td>1-3</td>
+                        <td>1-2</td>
+                        <td>1.2-3</td>
+                        <td>1-2.5</td>
+                    </tr>
+                    <tr>
+                        <td>Material</td>
+                        <td>LLDPE</td>
+                        <td>LDPE</td>
+                        <td>Bio-polymer</td>
+                        <td>Co-extruded</td>
+                        <td>LDPE/LLDPE</td>
+                    </tr>
+                    <tr>
+                        <td>UV Resistance</td>
+                        <td>8 months</td>
+                        <td>6 months</td>
+                        <td>4 months</td>
+                        <td>9 months</td>
+                        <td>7 months</td>
+                    </tr>
+                    <tr>
+                        <td>Tensile Strength</td>
+                        <td>Excellent</td>
+                        <td>Good</td>
+                        <td>Moderate</td>
+                        <td>Excellent</td>
+                        <td>Good</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="features" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About AgriMulch</h2>
+                <p>Your trusted partner in agricultural solutions</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏭</div>
+                    <h3>Manufacturing Excellence</h3>
+                    <p>State-of-the-art manufacturing facilities with quality control</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Pan India Presence</h3>
+                    <p>Serving farmers across India with reliable products</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research & Development</h3>
+                    <p>Continuous innovation in agricultural film technology</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Farmer Support</h3>
+                    <p>Technical guidance and after-sales support for farmers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Contact us for quotes and technical support</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>📍 Address: 123 Agriculture Zone, Farm City, India</p>
+                    <p>📞 Phone: +91-9876543210</p>
+                    <p>✉️ Email: info@agrimulch.com</p>
+                    <p>🕒 Business Hours: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone">
+                        <select style="width: 100%; padding: 12px; margin-bottom: 1rem; border: 1px solid var(--light-gray); border-radius: 5px; background: var(--white);">
+                            <option>Select Product Interest</option>
+                            <option>Black Mulch Film</option>
+                            <option>Transparent Mulch Film</option>
+                            <option>Biodegradable Mulch</option>
+                            <option>Silver Black Mulch</option>
+                            <option>Green Mulch Film</option>
+                            <option>Photo-Selective Mulch</option>
+                        </select>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="cta-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>AgriMulch</h3>
+                    <p>Leading manufacturers of quality agricultural mulch films in India. Enhancing farming productivity since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="#">Black Mulch Film</a></li>
+                        <li><a href="#">Transparent Mulch</a></li>
+                        <li><a href="#">Biodegradable Mulch</a></li>
+                        <li><a href="#">Silver Black Mulch</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Technical Guide</a></li>
+                        <li><a href="#">Installation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriMulch. All rights reserved. | Premium Agricultural Mulch Films</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            this.reset();
+        });
+
+        // Add hover effects to product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 10px 25px rgba(46, 125, 50, 0.3)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        });
+    </script>
+</body>
+</html>
