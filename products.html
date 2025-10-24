@@ -160,6 +160,84 @@
             color: var(--primary-green);
         }
         
+.whatsapp-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-link i {
+    font-size: 32px;
+    color: white;
+}
+
+.whatsapp-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+}
+
+/* Pulse animation */
+@keyframes whatsapp-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    animation: whatsapp-pulse 2s infinite;
+    z-index: -1;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .whatsapp-icon {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-link {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-link i {
+        font-size: 28px;
+    }
+    
+    .whatsapp-icon::after {
+        width: 65px;
+        height: 65px;
+    }
+}
+
 /* Header - Reduced Height */
 header {
     background: var(--white);
@@ -773,27 +851,15 @@ flex-direction: row-reverse;
         </div>
     </section>
 
-<!-- WhatsApp Floating Widget -->
-     <img src="" alt="">
-    <div class="whatsapp-widget" id="whatsapp-widget">
-        <div class="whatsapp-main" id="whatsapp-main">
-            <i class="fab fa-whatsapp"></i>
-        </div>
-        <div class="whatsapp-options" id="whatsapp-options">
-            <a href="tel:+919890013754" class="whatsapp-option call">
-                <i class="fas fa-phone"></i>
-                <span>Call</span>
-            </a>
-            <a href="https://wa.me/919890013754" target="_blank" class="whatsapp-option whatsapp">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-            <a href="sms:+919876543210" class="whatsapp-option sms">
-                <i class="fas fa-sms"></i>
-                <span>SMS</span>
-            </a>
-        </div>
-    </div>
+<!-- WhatsApp Icon with Font Awesome -->
+<div class="whatsapp-icon">
+    <a href="https://wa.me/919798990420" target="_blank" class="whatsapp-link">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<!-- Add Font Awesome CDN in head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
     <!-- Footer -->
