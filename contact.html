@@ -819,7 +819,7 @@ flex-direction: row-reverse;
                             <label for="message">Message *</label>
                             <textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea>
                         </div>
-                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Message via WhatsApp</button>
                     </form>
                 </div>
             </div>
@@ -906,6 +906,67 @@ flex-direction: row-reverse;
     </footer>
 
     <script>
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const product = document.getElementById('product').value;
+            const quantity = document.getElementById('quantity').value;
+            const message = document.getElementById('message').value;
+            
+            // Format product name for display
+            let productDisplay = '';
+            switch(product) {
+                case 'black-mulch':
+                    productDisplay = 'Black Mulch Film';
+                    break;
+                case 'transparent-mulch':
+                    productDisplay = 'Transparent Mulch Film';
+                    break;
+                case 'biodegradable':
+                    productDisplay = 'Biodegradable Mulch';
+                    break;
+                case 'silver-black':
+                    productDisplay = 'Silver Black Mulch';
+                    break;
+                case 'green-mulch':
+                    productDisplay = 'Green Mulch Film';
+                    break;
+                case 'photo-selective':
+                    productDisplay = 'Photo-Selective Mulch';
+                    break;
+                case 'custom':
+                    productDisplay = 'Custom Solution';
+                    break;
+                default:
+                    productDisplay = 'Not specified';
+            }
+            
+            // Create WhatsApp message
+            let whatsappMessage = `Hello SM AGROTECH Team,%0A%0A`;
+            whatsappMessage += `I would like to inquire about your products.%0A%0A`;
+            whatsappMessage += `*Name:* ${name}%0A`;
+            whatsappMessage += `*Email:* ${email}%0A`;
+            whatsappMessage += `*Phone:* ${phone || 'Not provided'}%0A`;
+            whatsappMessage += `*Product Interest:* ${productDisplay}%0A`;
+            whatsappMessage += `*Estimated Quantity:* ${quantity || 'Not specified'} kg%0A`;
+            whatsappMessage += `*Message:* ${message}%0A%0A`;
+            whatsappMessage += `Please get back to me with more information.`;
+            
+            // WhatsApp phone number (replace with your actual number)
+            const whatsappNumber = '919798990420'; // Remove any + or - characters
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+        });
+
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenuClose = document.getElementById('mobileMenuClose');
