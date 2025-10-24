@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - SM AGROTECH | Premium Mulch Films</title>
+    <title>Contact - Shree Maruti Agrotech | Premium Mulch Films</title>
     <style>
         * {
             margin: 0;
@@ -12,6 +12,66 @@
             font-family: 'Arial', sans-serif;
         }
         
+/* Logo and Company Name */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.company-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    white-space: nowrap;
+}
+
+.company-name .line1 {
+    font-size: 1.4rem;
+    display: block;
+    line-height: 1.2;
+}
+
+.company-name .line2 {
+    font-size: 1.2rem;
+    display: block;
+    line-height: 1.2;
+    color: var(--dark-gray);
+}
+
+/* Mobile Responsive for Company Name */
+@media (max-width: 767px) {
+    .company-name {
+        font-size: 1.2rem;
+    }
+    
+    .company-name .line1 {
+        font-size: 1rem;
+    }
+    
+    .company-name .line2 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-name {
+        font-size: 1rem;
+    }
+    
+    .company-name .line1 {
+        font-size: 0.9rem;
+    }
+    
+    .company-name .line2 {
+        font-size: 0.8rem;
+    }
+    
+    .logo-container {
+        gap: 10px;
+    }
+}
+
         :root {
             --primary-green: #2e7d32;
             --secondary-green: #4caf50;
@@ -671,18 +731,24 @@ header {
             <div class="company-tagline">Leading Mulch Film Manufacturers in India</div>
             <div class="contact-info1">
                 <span>📞 +91-9876543210</span>
-                <span>✉️ info@SM AGROTECH.com</span>
+                <span>✉️ info@shreemarutiagrotech.com</span>
             </div>
         </div>
     </div>
     <div class="container">
         <nav class="nav-container">
-            <a href="#" class="logo">
-                <img src="img/sm11.png" alt="Shree Maruti Agrotech Logo" class="logo-img">
-            </a>
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <img src="img/sm11.png" alt="Shree Maruti Agrotech Logo" class="logo-img">
+                </a>
+                <div class="company-name">
+                    <span class="line1">Shree Maruti</span>
+                    <span class="line2">Agrotech</span>
+                </div>
+            </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
             <ul class="nav-links">
-                <li><a href="index.html">home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -726,13 +792,14 @@ header {
                                 <p>+91-9876543210<br>+91-9876543211</p>
                             </div>
                         </div>
-                        <div class="contact-detail">
-                            <i>✉️</i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@SM AGROTECH.com<br>sales@SM AGROTECH.com</p>
-                            </div>
-                        </div>
+                        <!-- In the contact details section -->
+<div class="contact-detail">
+    <i>✉️</i>
+    <div>
+        <h4>Email</h4>
+        <p>info@shreemarutiagrotech.com<br>sales@shreemarutiagrotech.com</p>
+    </div>
+</div>
                         <div class="contact-detail">
                             <i>🕒</i>
                             <div>
@@ -814,10 +881,11 @@ header {
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-section">
-                    <h3>SM AGROTECH</h3>
-                    <p>Leading manufacturers of quality agricultural mulch films in India. Enhancing farming productivity with innovative solutions.</p>
-                </div>
+                <!-- In the footer section -->
+<div class="footer-section">
+    <h3>Shree Maruti Agrotech</h3>
+    <p>Leading manufacturers of quality agricultural mulch films in India. Enhancing farming productivity with innovative solutions.</p>
+</div>
                 <div class="footer-section">
                     <h3>Products</h3>
                     <ul>
@@ -845,9 +913,9 @@ header {
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 SM AGROTECH. All rights reserved. | Premium Agricultural Mulch Films Manufacturers</p>
-            </div>
+<div class="footer-bottom">
+    <p>&copy; 2024 Shree Maruti Agrotech. All rights reserved. | Premium Agricultural Mulch Films Manufacturers</p>
+</div>
         </div>
     </footer>
 
@@ -893,7 +961,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
             }
             
             // Create WhatsApp message
-            let whatsappMessage = `Hello SM AGROTECH Team,%0A%0A`;
+            // In the form submission JavaScript
+            let whatsappMessage = `Hello Shree Maruti Agrotech Team,%0A%0A`;
             whatsappMessage += `I would like to inquire about your products.%0A%0A`;
             whatsappMessage += `*Name:* ${name}%0A`;
             whatsappMessage += `*Email:* ${email}%0A`;
