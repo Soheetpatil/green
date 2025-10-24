@@ -734,6 +734,91 @@
                 gap: 10px;
             }
         }
+
+        /* Instagram Icon */
+.instagram-icon {
+    position: fixed;
+    bottom: 100px; /* Positioned above WhatsApp */
+    right: 25px;
+    z-index: 1000;
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+    transition: all 0.3s ease;
+}
+
+.instagram-link i {
+    font-size: 32px;
+    color: white;
+}
+
+.instagram-link:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(225, 48, 108, 0.5);
+}
+
+/* Instagram Pulse animation */
+@keyframes instagram-pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(225, 48, 108, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(225, 48, 108, 0);
+    }
+}
+
+/* Mobile responsive for both icons */
+@media (max-width: 768px) {
+    .instagram-icon {
+        bottom: 90px;
+        right: 20px;
+    }
+    
+    .whatsapp-icon {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .instagram-link {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .instagram-link i {
+        font-size: 28px;
+    }
+    
+    .instagram-icon::after {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+.instagram-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    animation: instagram-pulse 2s infinite;
+    z-index: -1;
+}
+
     </style>
 </head>
 <body>
@@ -747,6 +832,17 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
+
+<!-- Instagram Icon -->
+<div class="instagram-icon">
+    <a href="https://instagram.com/yourusername" target="_blank" class="instagram-link">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- Add Font Awesome CDN in head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</div>
 
     <!-- Header -->
     <header>

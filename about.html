@@ -12,66 +12,6 @@
             font-family: 'Arial', sans-serif;
         }
         
-/* Logo and Company Name */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.company-name {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-green);
-    white-space: nowrap;
-}
-
-.company-name .line1 {
-    font-size: 1.4rem;
-    display: block;
-    line-height: 1.2;
-}
-
-.company-name .line2 {
-    font-size: 1.2rem;
-    display: block;
-    line-height: 1.2;
-    color: var(--dark-gray);
-}
-
-/* Mobile Responsive for Company Name */
-@media (max-width: 767px) {
-    .company-name {
-        font-size: 1.2rem;
-    }
-    
-    .company-name .line1 {
-        font-size: 1rem;
-    }
-    
-    .company-name .line2 {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .company-name {
-        font-size: 1rem;
-    }
-    
-    .company-name .line1 {
-        font-size: 1.4rem;
-    }
-    
-    .company-name .line2 {
-        font-size: 1.2rem;
-    }
-    
-    .logo-container {
-        gap: 10px;
-    }
-}
-
         :root {
             --primary-green: #2e7d32;
             --secondary-green: #4caf50;
@@ -90,6 +30,38 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+        }
+        
+        /* Logo and Company Name */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 100px;
+            width: auto;
+        }
+        
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            white-space: nowrap;
+        }
+        
+        .company-name .line1 {
+            font-size: 1.4rem;
+            display: block;
+            line-height: 1.2;
+        }
+        
+        .company-name .line2 {
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.2;
+            color: var(--dark-gray);
         }
         
         /* Mobile Menu */
@@ -162,7 +134,7 @@
         .top-bar {
             background: var(--primary-green);
             color: var(--white);
-            padding: 8px 0;
+            padding: 6px 0;
             font-size: 0.8rem;
         }
         
@@ -186,18 +158,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 0;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-green);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--dark-green);
+            padding: 2px 0;
         }
         
         .nav-links {
@@ -220,98 +181,15 @@
             color: var(--primary-green);
         }
         
-/* Header - Reduced Height */
-header {
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.top-bar {
-    background: var(--primary-green);
-    color: var(--white);
-    padding: 6px 0; /* Reduced padding */
-    font-size: 0.8rem;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2px 0; /* Reduced padding */
-}
-
-/* Logo - Made Bigger */
-/* Logo - Made Much Bigger */
-.logo-img {
-    height: 100px; /* Increased from 50px to 70px */
-    width: auto;
-}
-
-/* For mobile responsiveness */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 67px; /* Bigger on tablet */
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-img {
-        height: 50px; /* Bigger on mobile */
-    }
-}
-
-/* Hero Section - Adjusted margin for smaller header */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    padding: 140px 0 80px; /* Reduced top padding */
-    text-align: center;
-    margin-top: 70px; /* Reduced margin */
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 45px; /* Slightly bigger on mobile */
-    }
-    
-    .hero {
-        padding: 110px 0 60px;
-        margin-top: 60px;
-    }
-    
-    .nav-container {
-        padding: 6px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo-img {
-        height: 70px; /* Slightly bigger on small mobile */
-    }
-    
-    .hero {
-        padding: 90px 0 50px;
-        margin-top: 50px;
-    }
-}
-
-        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 150px 0 80px;
+            padding: 140px 0 80px;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 70px;
         }
         
         .hero h1 {
@@ -389,7 +267,7 @@ header {
         
         .about-image {
             height: 300px;
-           background-image: url('img/Black Mulch Film.png');
+            background-image: url('img/Black Mulch Film.png');
             background-size: cover;
             background-position: center;
             border-radius: 10px;
@@ -522,6 +400,120 @@ header {
             font-size: 0.9rem;
         }
         
+        /* WhatsApp Icon */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+        }
+        
+        .whatsapp-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-link i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        .whatsapp-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+        }
+        
+        /* Pulse animation */
+        @keyframes whatsapp-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .whatsapp-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            animation: whatsapp-pulse 2s infinite;
+            z-index: -1;
+        }
+        
+        /* Instagram Icon */
+        .instagram-icon {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            z-index: 1000;
+        }
+        
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .instagram-link i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        .instagram-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(225, 48, 108, 0.5);
+        }
+        
+        /* Instagram Pulse animation */
+        @keyframes instagram-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(225, 48, 108, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(225, 48, 108, 0);
+            }
+        }
+        
+        .instagram-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            animation: instagram-pulse 2s infinite;
+            z-index: -1;
+        }
+        
         /* Mobile Responsive Styles */
         @media (min-width: 768px) {
             .about-content {
@@ -580,6 +572,27 @@ header {
             .about-text h2 {
                 font-size: 1.5rem;
             }
+            
+            /* Mobile-specific company name styling */
+            .company-name {
+                font-size: 1.2rem;
+            }
+            
+            .company-name .line1 {
+                font-size: 1rem;
+            }
+            
+            .company-name .line2 {
+                font-size: 0.9rem;
+            }
+            
+            .logo-img {
+                height: 60px;
+            }
+            
+            .nav-container {
+                padding: 6px 0;
+            }
         }
         
         @media (max-width: 480px) {
@@ -607,94 +620,69 @@ header {
                 height: 250px;
                 font-size: 1.2rem;
             }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .whatsapp-icon {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-link {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .whatsapp-link i {
+                font-size: 28px;
+            }
+            
+            .whatsapp-icon::after {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .instagram-icon {
+                bottom: 90px;
+                right: 20px;
+            }
+            
+            .instagram-link {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .instagram-link i {
+                font-size: 28px;
+            }
+            
+            .instagram-icon::after {
+                width: 65px;
+                height: 65px;
+            }
+            
+            /* Extra small screens company name */
+            .company-name {
+                font-size: 1rem;
+            }
+            
+            .company-name .line1 {
+                font-size: 0.9rem;
+            }
+            
+            .company-name .line2 {
+                font-size: 0.8rem;
+            }
+            
+            .logo-container {
+                gap: 10px;
+            }
         }
-
-        body.dark-mode {
-    --color-whatsapp: #25d366;
-    --color-whatsapp-call: #2563eb;
-    --color-whatsapp-sms: #ff6b35;
-}
-
-.whatsapp-icon {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 1000;
-}
-
-.whatsapp-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-    transition: all 0.3s ease;
-}
-
-.whatsapp-link i {
-    font-size: 32px;
-    color: white;
-}
-
-.whatsapp-link:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
-}
-
-/* Pulse animation */
-@keyframes whatsapp-pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-    }
-}
-
-.whatsapp-icon::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    animation: whatsapp-pulse 2s infinite;
-    z-index: -1;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .whatsapp-icon {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .whatsapp-link {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .whatsapp-link i {
-        font-size: 28px;
-    }
-    
-    .whatsapp-icon::after {
-        width: 65px;
-        height: 65px;
-    }
-}
-
-
     </style>
+    <!-- Add Font Awesome CDN in head section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Mobile Menu -->
@@ -709,42 +697,42 @@ header {
     </div>
 
     <!-- Header -->
-<!-- Header -->
-<header>
-    <div class="top-bar">
-        <div class="container">
-            <div class="company-tagline">Leading Mulch Film Manufacturers in India</div>
-            <div class="contact-info1">
-    <span>📞 +91-9876543210</span>
-    <span>✉️ info@shreemarutiagrotech.com</span>
-</div>
-        </div>
-    </div>
-    <div class="container">
-        <nav class="nav-container">
-            <div class="logo-container">
-                <a href="#" class="logo">
-                    <img src="img/sm11.png" alt="Shree Maruti Agrotech Logo" class="logo-img">
-                </a>
-                <div class="company-name">
-                    <span class="line1">Shree Maruti</span>
-                    <span class="line2">Agrotech</span>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="company-tagline">Leading Mulch Film Manufacturers in India</div>
+                <div class="contact-info1">
+                    <span>📞 +91-9876543210</span>
+                    <span>✉️ info@shreemarutiagrotech.com</span>
                 </div>
             </div>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+        </div>
+        <div class="container">
+            <nav class="nav-container">
+                <div class="logo-container">
+                    <a href="#" class="logo">
+                        <img src="img/sm11.png" alt="Shree Maruti Agrotech Logo" class="logo-img">
+                    </a>
+                    <div class="company-name">
+                        <span class="line1">Shree Maruti</span>
+                        <span class="line2">Agrotech</span>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>About SM AGROTECH</h1>
+            <h1>About Shree Maruti Agrotech</h1>
             <p>Your trusted partner in agricultural solutions for over a decade</p>
             <button class="cta-button" onclick="location.href='contact.html'">Contact Us</button>
         </div>
@@ -758,35 +746,28 @@ header {
                 <p>Committed to enhancing agricultural productivity</p>
             </div>
             
-           <!-- About Section -->
-<div class="about-text">
-    <h2>Who We Are</h2>
-    <p>Shree Maruti Agrotech is a leading manufacturer of premium agricultural mulch films in India, dedicated to revolutionizing farming practices through innovative solutions. With over a decade of experience in the agricultural sector, we understand the unique challenges faced by Indian farmers.</p>
-    <p>Our mission is to provide high-quality, durable, and cost-effective mulch films that help farmers increase crop yield, conserve water, and reduce labor costs. We combine traditional farming wisdom with modern technology to create products that truly make a difference.</p>
-    <p>Based in the heart of India's agricultural belt, we are committed to sustainable farming practices and environmental conservation. Our biodegradable mulch films represent our dedication to eco-friendly solutions.</p>
-    <button class="cta-button" onclick="location.href='products.html'">View Our Products</button>
-</div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Who We Are</h2>
+                    <p>Shree Maruti Agrotech is a leading manufacturer of premium agricultural mulch films in India, dedicated to revolutionizing farming practices through innovative solutions. With over a decade of experience in the agricultural sector, we understand the unique challenges faced by Indian farmers.</p>
+                    <p>Our mission is to provide high-quality, durable, and cost-effective mulch films that help farmers increase crop yield, conserve water, and reduce labor costs. We combine traditional farming wisdom with modern technology to create products that truly make a difference.</p>
+                    <p>Based in the heart of India's agricultural belt, we are committed to sustainable farming practices and environmental conservation. Our biodegradable mulch films represent our dedication to eco-friendly solutions.</p>
+                    <button class="cta-button" onclick="location.href='products.html'">View Our Products</button>
+                </div>
+                <div class="about-image">
+                    Our Manufacturing Facility
+                </div>
+            </div>
+        </div>
     </section>
-
-<!-- WhatsApp Icon with Font Awesome -->
-<div class="whatsapp-icon">
-    <a href="https://wa.me/919890013754" target="_blank" class="whatsapp-link">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
-
-<!-- Add Font Awesome CDN in head section -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
 
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <!-- Features Section -->
-<div class="section-title">
-    <h2>Why Choose Shree Maruti Agrotech?</h2>
-    <p>Our commitment to quality and innovation</p>
-</div>
+            <div class="section-title">
+                <h2>Why Choose Shree Maruti Agrotech?</h2>
+                <p>Our commitment to quality and innovation</p>
+            </div>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🏭</div>
@@ -835,11 +816,10 @@ header {
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <!-- Footer -->
-<div class="footer-section">
-    <h3>Shree Maruti Agrotech</h3>
-    <p>Leading manufacturers of quality agricultural mulch films in India. Enhancing farming productivity with innovative solutions.</p>
-</div>
+                <div class="footer-section">
+                    <h3>Shree Maruti Agrotech</h3>
+                    <p>Leading manufacturers of quality agricultural mulch films in India. Enhancing farming productivity with innovative solutions.</p>
+                </div>
                 <div class="footer-section">
                     <h3>Products</h3>
                     <ul>
@@ -868,10 +848,24 @@ header {
                 </div>
             </div>
             <div class="footer-bottom">
-    <p>&copy; 2024 Shree Maruti Agrotech. All rights reserved. | Premium Agricultural Mulch Films Manufacturers</p>
-</div>
+                <p>&copy; 2024 Shree Maruti Agrotech. All rights reserved. | Premium Agricultural Mulch Films Manufacturers</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Instagram Icon -->
+    <div class="instagram-icon">
+        <a href="https://instagram.com/yourusername" target="_blank" class="instagram-link">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- WhatsApp Icon -->
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/919890013754" target="_blank" class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script>
         // Mobile Menu Toggle
