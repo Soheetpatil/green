@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SM SGROTECHCHCH - Premium Agricultural Mulch Films</title>
+    <title>Shree Maruti Agrotech - Premium Agricultural Mulch Films</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -79,10 +79,36 @@
             padding: 2px 0;
         }
         
-        /* Logo - Made Bigger */
+        /* Logo and Company Name */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
         .logo-img {
             height: 100px;
             width: auto;
+        }
+        
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            white-space: nowrap;
+        }
+        
+        .company-name .line1 {
+            font-size: 1.4rem;
+            display: block;
+            line-height: 1.2;
+        }
+        
+        .company-name .line2 {
+            font-size: 1.2rem;
+            display: block;
+            line-height: 1.2;
+            color: var(--dark-gray);
         }
         
         /* Mobile Menu - Improved */
@@ -623,6 +649,19 @@
             .contact-form select {
                 font-size: 16px; /* Prevents zoom on iOS */
             }
+            
+            /* Mobile-specific company name styling */
+            .company-name {
+                font-size: 1.2rem;
+            }
+            
+            .company-name .line1 {
+                font-size: 1rem;
+            }
+            
+            .company-name .line2 {
+                font-size: 0.9rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -652,7 +691,7 @@
             }
             
             .logo-img {
-                height: 70px;
+                height: 50px;
             }
             
             .whatsapp-icon {
@@ -677,6 +716,23 @@
             .product-grid {
                 grid-template-columns: 1fr;
             }
+            
+            /* Extra small screens company name */
+            .company-name {
+                font-size: 1rem;
+            }
+            
+            .company-name .line1 {
+                font-size: 0.9rem;
+            }
+            
+            .company-name .line2 {
+                font-size: 0.8rem;
+            }
+            
+            .logo-container {
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -699,15 +755,21 @@
                 <div class="company-tagline">Leading Mulch Film Manufacturers in India</div>
                 <div class="contact-info1">
                     <span>📞 +91-9876543210</span>
-                    <span>✉️ info@SM AGROTECHCHCH.com</span>
+                    <span>✉️ info@shreemarutiagrotech.com</span>
                 </div>
             </div>
         </div>
         <div class="container">
             <nav class="nav-container">
-                <a href="#" class="logo">
-                    <img src="img/sm11.png" alt="SM SGROTECHCHCH Logo" class="logo-img">
-                </a>
+                <div class="logo-container">
+                    <a href="#" class="logo">
+                        <img src="img/sm11.png" alt="Shree Maruti Agrotech Logo" class="logo-img">
+                    </a>
+                    <div class="company-name">
+                        <span class="line1">Shree Maruti</span>
+                        <span class="line2">Agrotech</span>
+                    </div>
+                </div>
                 <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -929,7 +991,7 @@
     <section class="features" id="about">
         <div class="container">
             <div class="section-title">
-                <h2>About SM SGROTECHCHCH</h2>
+                <h2>About Shree Maruti Agrotech</h2>
                 <p>Your trusted partner in agricultural solutions</p>
             </div>
             <div class="feature-grid">
@@ -967,9 +1029,9 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p>📍 Address: Survey No 468/2, plot no 1 Shinde MIDC Naigaon Road Nashik Road Nashik 422 102</p>
+                    <p>📍 Address: Survey No 468/2, plot no 1 Shinde MIDC Naigaon Road Nashik Road Nashik 422 102</p>
                     <p>📞 Phone: +91-9890013754</p>
-                    <p>✉️ Email: info@SM AGROTECHCHCH.com</p>
+                    <p>✉️ Email: info@shreemarutiagrotech.com</p>
                     <p>🕒 Business Hours: 9:00 AM - 6:00 PM</p>
                 </div>
                 <div class="contact-form">
@@ -997,7 +1059,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>SM SGROTECHCHCH</h3>
+                    <h3>Shree Maruti Agrotech</h3>
                     <p>Leading manufacturers of quality agricultural mulch films in India.</p>
                 </div>
                 <div class="footer-section">
@@ -1027,7 +1089,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 SM SGROTECHCHCH. All rights reserved.</p>
+                <p>&copy; 2024 Shree Maruti Agrotech. All rights reserved.</p>
             </div>
         </div>
     </footer>
