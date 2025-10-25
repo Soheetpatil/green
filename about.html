@@ -44,25 +44,47 @@
             width: auto;
         }
         
-        .company-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-green);
-            white-space: nowrap;
-        }
-        
-        .company-name .line1 {
-            font-size: 1.4rem;
-            display: block;
-            line-height: 1.2;
-        }
-        
-        .company-name .line2 {
-            font-size: 1.2rem;
-            display: block;
-            line-height: 1.2;
-            color: var(--dark-gray);
-        }
+        /* Logo and Company Name - Updated for single line */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+}
+
+.company-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.company-name .line1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-green);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline;
+}
+
+.company-name .line2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--dark-gray);
+    font-weight: 700;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline;
+}
         
         /* Mobile Menu */
         .mobile-menu-btn {
@@ -770,11 +792,6 @@
             </div>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🏭</div>
-                    <h3>Manufacturing Excellence</h3>
-                    <p>State-of-the-art manufacturing facilities with strict quality control measures</p>
-                </div>
-                <div class="feature-card">
                     <div class="feature-icon">🔬</div>
                     <h3>Research & Development</h3>
                     <p>Continuous innovation in agricultural film technology and farming solutions</p>
@@ -855,7 +872,7 @@
 
     <!-- Instagram Icon -->
     <div class="instagram-icon">
-        <a href="https://instagram.com/yourusername" target="_blank" class="instagram-link">
+        <a href="https://instagram.com/sm_agrotech" target="_blank" class="instagram-link">
             <i class="fab fa-instagram"></i>
         </a>
     </div>

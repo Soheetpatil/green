@@ -84,45 +84,47 @@
         }
         
         /* Logo and Company Name - Updated with different fonts */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .logo-img {
-            height: 100px;
-            width: auto;
-        }
-        
-        .company-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-green);
-            white-space: nowrap;
-        }
-        
-        .company-name .line1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            display: block;
-            line-height: 1.2;
-            color: var(--primary-green);
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        
-        .company-name .line2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            display: block;
-            line-height: 1.2;
-            color: var(--dark-gray);
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
+        /* Logo and Company Name - Updated for single line */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+}
+
+.company-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.company-name .line1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-green);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline;
+}
+
+.company-name .line2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--dark-gray);
+    font-weight: 700;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline;
+}
         /* Mobile Menu - Improved */
         .mobile-menu-btn {
             display: none;
@@ -720,20 +722,41 @@
             }
             
             /* Mobile-specific company name styling */
-            .company-name {
-                font-size: 1.2rem;
-            }
-            
-            .company-name .line1 {
-                font-size: 1rem;
-                font-family: 'Playfair Display', serif;
-            }
-            
-            .company-name .line2 {
-                font-size: 0.9rem;
-                font-family: 'Montserrat', sans-serif;
-            }
-            
+           @media (max-width: 767px) {
+    .company-name {
+        font-size: 1.2rem;
+        flex-direction: row;
+        align-items: baseline;
+    }
+    
+    .company-name .line1 {
+        font-size: 1rem;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .company-name .line2 {
+        font-size: 0.9rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-name {
+        font-size: 1rem;
+        flex-direction: row;
+        align-items: baseline;
+    }
+    
+    .company-name .line1 {
+        font-size: 1.4rem;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .company-name .line2 {
+        font-size: 1.2rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
             /* Mobile responsive for both icons */
             .instagram-icon {
                 bottom: 90px;
@@ -848,7 +871,7 @@
 
     <!-- Instagram Icon -->
     <div class="instagram-icon">
-        <a href="https://instagram.com/yourusername" target="_blank" class="instagram-link">
+        <a href="https://instagram.com/sm_agrotech" target="_blank" class="instagram-link">
             <i class="fab fa-instagram"></i>
         </a>
     </div>
@@ -912,8 +935,8 @@
                         <h3>Black Mulch Film</h3>
                         <p>Excellent weed control and moisture retention for various crops</p>
                         <ul class="specs">
-                            <li><strong>Thickness:</strong> 25-50 microns</li>
-                            <li><strong>Width:</strong> 1-4 meters</li>
+                            <li><strong>Thickness:</strong> 15-50 microns</li>
+                            <li><strong>Width:</strong> upto 5ft</li>
                             <li><strong>Material:</strong> LLDPE</li>
                             <li><strong>UV Protection:</strong> 8 months</li>
                         </ul>
@@ -930,8 +953,8 @@
                         <h3>Transparent Mulch Film</h3>
                         <p>Early soil warming for faster growth and early harvest</p>
                         <ul class="specs">
-                            <li><strong>Thickness:</strong> 25-40 microns</li>
-                            <li><strong>Width:</strong> 1-3 meters</li>
+                            <li><strong>Thickness:</strong> 15-50 microns</li>
+                            <li><strong>Width:</strong> upto 5ft</li>
                             <li><strong>Material:</strong> LDPE</li>
                             <li><strong>UV Protection:</strong> 6 months</li>
                         </ul>
@@ -1097,11 +1120,7 @@
                 <p>Your trusted partner in agricultural solutions</p>
             </div>
             <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🏭</div>
-                    <h3>Manufacturing Excellence</h3>
-                    <p>State-of-the-art manufacturing facilities with quality control</p>
-                </div>
+
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
                     <h3>Pan India Presence</h3>
@@ -1131,7 +1150,7 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    <p>📍 Address: Survey No 468/2, plot no 1 Shinde MIDC Naigaon Road Nashik Road Nashik 422 102</p>
+                    <p>📍 Address: Survey No. 468/2, Plot No. 1, Shinde MIDC Area, Naigaon Road, Nashik Road, Nashik 422 102.</p>
                     <p>📞 Phone: +91-9890013754</p>
                     <p>✉️ Email: info@shreemarutiagrotech.com</p>
                     <p>🕒 Business Hours: 9:00 AM - 6:00 PM</p>

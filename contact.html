@@ -44,25 +44,47 @@
             width: auto;
         }
         
-        .company-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-green);
-            white-space: nowrap;
-        }
-        
-        .company-name .line1 {
-            font-size: 1.4rem;
-            display: block;
-            line-height: 1.2;
-        }
-        
-        .company-name .line2 {
-            font-size: 1.2rem;
-            display: block;
-            line-height: 1.2;
-            color: var(--dark-gray);
-        }
+       /* Logo and Company Name - Updated for single line */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 100px;
+    width: auto;
+}
+
+.company-name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-green);
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.company-name .line1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-green);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline;
+}
+
+.company-name .line2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--dark-gray);
+    font-weight: 700;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: inline;
+}
         
         /* Mobile Menu */
         .mobile-menu-btn {
@@ -586,17 +608,41 @@
             }
             
             /* Mobile-specific company name styling */
-            .company-name {
-                font-size: 1.2rem;
-            }
-            
-            .company-name .line1 {
-                font-size: 1rem;
-            }
-            
-            .company-name .line2 {
-                font-size: 0.9rem;
-            }
+            @media (max-width: 767px) {
+    .company-name {
+        font-size: 1.2rem;
+        flex-direction: row;
+        align-items: baseline;
+    }
+    
+    .company-name .line1 {
+        font-size: 1rem;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .company-name .line2 {
+        font-size: 0.9rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-name {
+        font-size: 1rem;
+        flex-direction: row;
+        align-items: baseline;
+    }
+    
+    .company-name .line1 {
+        font-size: 1.4rem;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .company-name .line2 {
+        font-size: 1.2rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
             
             .logo-img {
                 height: 60px;
@@ -773,7 +819,7 @@
                             <i>📍</i>
                             <div>
                                 <h4>Address</h4>
-                                <p>Survey No 468/2, plot no 1<br>Shinde MIDC Naigaon Road<br>Nashik Road Nashik 422 102</p>
+                                <p>Survey No. 468/2, Plot No. 1, Shinde MIDC Area, Naigaon Road, Nashik Road, Nashik 422 102.</p>
                             </div>
                         </div>
                         <div class="contact-detail">
@@ -899,7 +945,7 @@
 
     <!-- Instagram Icon -->
     <div class="instagram-icon">
-        <a href="https://instagram.com/yourusername" target="_blank" class="instagram-link">
+        <a href="https://instagram.com/sm_agrotech" target="_blank" class="instagram-link">
             <i class="fab fa-instagram"></i>
         </a>
     </div>
