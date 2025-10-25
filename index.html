@@ -855,6 +855,200 @@
                 gap: 10px;
             }
         }
+
+        /* Cart Styles */
+        .cart-icon {
+            position: relative;
+            margin-left: 1rem;
+        }
+        
+        .cart-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s;
+            padding: 5px;
+        }
+        
+        .cart-btn:hover {
+            color: var(--primary-green);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            z-index: 2000;
+            transition: right 0.3s ease;
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+        
+        .cart-sidebar.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .cart-title {
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+        
+        .cart-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-gray);
+        }
+        
+        .cart-items {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .cart-item-details {
+            flex: 1;
+            padding-right: 1rem;
+        }
+        
+        .cart-item-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            color: var(--dark-gray);
+        }
+        
+        .cart-item-price {
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+        
+        .quantity-btn {
+            background: var(--light-gray);
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            margin: 0 0.5rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 3px;
+            padding: 2px;
+        }
+        
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #ff4444;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .cart-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .cart-action-btn {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .cart-checkout {
+            background: var(--primary-green);
+            color: white;
+        }
+        
+        .cart-checkout:hover {
+            background: var(--dark-green);
+        }
+        
+        .cart-continue {
+            background: var(--light-gray);
+            color: var(--dark-gray);
+        }
+        
+        .cart-continue:hover {
+            background: #e0e0e0;
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--dark-gray);
+        }
+        .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
     </style>
 </head>
 <body>
@@ -875,6 +1069,35 @@
             <i class="fab fa-instagram"></i>
         </a>
     </div>
+
+        <!-- Cart Sidebar -->
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Your Quote Request</h3>
+            <button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+            <div class="cart-empty" id="cartEmpty">
+                <p>Your quote request is empty</p>
+                <p>Add products to get a quote</p>
+            </div>
+        </div>
+        <div class="cart-total" id="cartTotal" style="display: none;">
+            <span>Total Estimated Value:</span>
+            <span id="totalAmount">₹0</span>
+        </div>
+        <div class="cart-actions" id="cartActions" style="display: none;">
+            <button class="cart-action-btn cart-checkout" id="cartCheckout">
+                Request Quote via WhatsApp
+            </button>
+            <button class="cart-action-btn cart-continue" id="cartContinue">
+                Continue Shopping
+            </button>
+        </div>
+    </div>
+
 
     <!-- Header -->
     <header>
@@ -904,6 +1127,7 @@
                     <li><a href="products.html">Products</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li class="cart-icon"></li>
                 </ul>
             </nav>
         </div>
