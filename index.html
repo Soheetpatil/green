@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shree Maruti Agrotech - Premium Agricultural Mulch Films</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
         * {
@@ -79,7 +83,7 @@
             padding: 2px 0;
         }
         
-        /* Logo and Company Name */
+        /* Logo and Company Name - Updated with different fonts */
         .logo-container {
             display: flex;
             align-items: center;
@@ -99,16 +103,24 @@
         }
         
         .company-name .line1 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             display: block;
             line-height: 1.2;
+            color: var(--primary-green);
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         
         .company-name .line2 {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.2rem;
             display: block;
             line-height: 1.2;
             color: var(--dark-gray);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
         /* Mobile Menu - Improved */
@@ -568,6 +580,63 @@
             z-index: -1;
         }
         
+        /* Instagram Icon */
+        .instagram-icon {
+            position: fixed;
+            bottom: 100px; /* Positioned above WhatsApp */
+            right: 25px;
+            z-index: 1000;
+        }
+
+        .instagram-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .instagram-link i {
+            font-size: 32px;
+            color: white;
+        }
+
+        .instagram-link:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(225, 48, 108, 0.5);
+        }
+
+        /* Instagram Pulse animation */
+        @keyframes instagram-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(225, 48, 108, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(225, 48, 108, 0);
+            }
+        }
+
+        .instagram-icon::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            animation: instagram-pulse 2s infinite;
+            z-index: -1;
+        }
+        
         /* Mobile Responsive Styles */
         @media (min-width: 768px) {
             .about-content {
@@ -655,13 +724,40 @@
                 font-size: 1.2rem;
             }
             
-    .company-name .line1 {
-        font-size: 1rem;
-    }
-    
-    .company-name .line2 {
-        font-size: 0.9rem;
-    }
+            .company-name .line1 {
+                font-size: 1rem;
+                font-family: 'Playfair Display', serif;
+            }
+            
+            .company-name .line2 {
+                font-size: 0.9rem;
+                font-family: 'Montserrat', sans-serif;
+            }
+            
+            /* Mobile responsive for both icons */
+            .instagram-icon {
+                bottom: 90px;
+                right: 20px;
+            }
+            
+            .whatsapp-icon {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .instagram-link {
+                width: 55px;
+                height: 55px;
+            }
+            
+            .instagram-link i {
+                font-size: 28px;
+            }
+            
+            .instagram-icon::after {
+                width: 65px;
+                height: 65px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -722,103 +818,20 @@
                 font-size: 1rem;
             }
             
-    .company-name .line1 {
-        font-size: 1.4rem;
-    }
-    
-    .company-name .line2 {
-        font-size: 1.2rem;
-    }
+            .company-name .line1 {
+                font-size: 1.4rem;
+                font-family: 'Playfair Display', serif;
+            }
+            
+            .company-name .line2 {
+                font-size: 1.2rem;
+                font-family: 'Montserrat', sans-serif;
+            }
             
             .logo-container {
                 gap: 10px;
             }
         }
-
-        /* Instagram Icon */
-.instagram-icon {
-    position: fixed;
-    bottom: 100px; /* Positioned above WhatsApp */
-    right: 25px;
-    z-index: 1000;
-}
-
-.instagram-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
-    transition: all 0.3s ease;
-}
-
-.instagram-link i {
-    font-size: 32px;
-    color: white;
-}
-
-.instagram-link:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 16px rgba(225, 48, 108, 0.5);
-}
-
-/* Instagram Pulse animation */
-@keyframes instagram-pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(225, 48, 108, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(225, 48, 108, 0);
-    }
-}
-
-/* Mobile responsive for both icons */
-@media (max-width: 768px) {
-    .instagram-icon {
-        bottom: 90px;
-        right: 20px;
-    }
-    
-    .whatsapp-icon {
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .instagram-link {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .instagram-link i {
-        font-size: 28px;
-    }
-    
-    .instagram-icon::after {
-        width: 65px;
-        height: 65px;
-    }
-}
-
-.instagram-icon::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    animation: instagram-pulse 2s infinite;
-    z-index: -1;
-}
-
     </style>
 </head>
 <body>
@@ -833,16 +846,12 @@
         </ul>
     </div>
 
-<!-- Instagram Icon -->
-<div class="instagram-icon">
-    <a href="https://instagram.com/yourusername" target="_blank" class="instagram-link">
-        <i class="fab fa-instagram"></i>
-    </a>
-
-    <!-- Add Font Awesome CDN in head section -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-</div>
+    <!-- Instagram Icon -->
+    <div class="instagram-icon">
+        <a href="https://instagram.com/yourusername" target="_blank" class="instagram-link">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
 
     <!-- Header -->
     <header>
@@ -1019,15 +1028,12 @@
         </div>
     </section>
 
-    <!-- WhatsApp Icon with Font Awesome -->
+    <!-- WhatsApp Icon -->
     <div class="whatsapp-icon">
         <a href="https://wa.me/919890013754" target="_blank" class="whatsapp-link">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
-
-    <!-- Add Font Awesome CDN in head section -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Technical Specifications -->
     <section class="tech-specs" id="specifications">
@@ -1130,23 +1136,22 @@
                     <p>✉️ Email: info@shreemarutiagrotech.com</p>
                     <p>🕒 Business Hours: 9:00 AM - 6:00 PM</p>
                 </div>
-<!-- Update your contact form section with these IDs -->
-<div class="contact-form">
-    <form id="contactForm">
-        <input type="text" placeholder="Your Name" required id="contactName">
-        <input type="email" placeholder="Your Email" required id="contactEmail">
-        <input type="tel" placeholder="Your Phone" id="contactPhone">
-        <select required id="contactProduct">
-            <option value="">Select Product Interest</option>
-            <option>Black Mulch Film</option>
-            <option>Transparent Mulch Film</option>
-            <option>Biodegradable Mulch</option>
-            <option>Other</option>
-        </select>
-        <textarea placeholder="Your Message" required id="contactMessage"></textarea>
-        <button type="submit" class="cta-button">Send Message via WhatsApp</button>
-    </form>
-</div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required id="contactName">
+                        <input type="email" placeholder="Your Email" required id="contactEmail">
+                        <input type="tel" placeholder="Your Phone" id="contactPhone">
+                        <select required id="contactProduct">
+                            <option value="">Select Product Interest</option>
+                            <option>Black Mulch Film</option>
+                            <option>Transparent Mulch Film</option>
+                            <option>Biodegradable Mulch</option>
+                            <option>Other</option>
+                        </select>
+                        <textarea placeholder="Your Message" required id="contactMessage"></textarea>
+                        <button type="submit" class="cta-button">Send Message via WhatsApp</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1359,7 +1364,6 @@
             }
         });
     });
-
     </script>
 </body>
 </html>
